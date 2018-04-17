@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<a href="/table">Notes List</a> &nbsp;
+<a href="/usertable">User List</a> &nbsp;
+<a href="/userprofile">UserProfile</a>
+<h3>List of Users</h3>
+<h4><a href="/addnotes">Add New User</a></h4>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>UserName</th>
+        <th>DisplayName</th>
+        <th>CreatedAt</th>
+        <th>UpdatedAt</th>
+        <th>Status</th>
+        <th>Action</th>
+        <th>Remarks</th>
+    </tr>
+    <tr th:each = "user: ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.displayName}"></td>
+        <td th:text="${user.createdAt}"></td>
+        <td th:text="${user.updatedAt}"></td>
+        <td th:text="${user.status}"></td>
+        <td><a href="/update">Update</a>&nbsp;<a href="/delete">Delete</a></td>
+        <td><a href="/userprofile">View Profile</a></td>
+    </tr>
+</table>
+</body>
+</html>

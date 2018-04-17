@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>UserProfile</title>
+</head>
+<body>
+<a href="/table">Notes Lis</a> &nbsp;
+<a href="/usertable">User List</a>
+<h2>Users Profile</h2>
+<h4><a href="/addnotes">Add New User</a></h4>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Date Of Birth</th>
+        <th>Status</th>
+        <th>Created Date</th>
+        <th>Updated Date</th>
+        <th>Action</th>
+
+
+    </tr>
+    <tr th:each = "userprofile: ${userprofiles}">
+        <td th:text="${userprofile.id}"></td>
+        <td th:text="${userprofile.firstName}"></td>
+        <td th:text="${userprofile.middleName}"></td>
+        <td th:text="${userprofile.lastName}"></td>
+        <td th:text="${userprofile.address}"></td>
+        <td th:text="${userprofile.email}"></td>
+        <td th:text="${userprofile.gender}"></td>
+        <td th:text="${userprofile.dob}"></td>
+        <td th:text="${userprofile.status}"></td>
+        <td th:text="${userprofile.createdAt}"></td>
+        <td th:text="${userprofile.updatedAt}"></td>
+        <td><a href="/update">Update</a>&nbsp;<a href="/delete">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
